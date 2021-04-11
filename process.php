@@ -3,11 +3,18 @@ if(isset($_POST['submit']))
 {
    $name=$_POST['Name'];
    $email=$_POST['Email'];
-   $phone=$_POST['Phone'];
+   $subject=$_POST['Phone'];
    $message=$_POST['Message'];
   
-   $to="demo@show1@gmail.com";
-   if(mail($to,$message,$email))
+  
+   $to="demo2show1@gmail.com";
+   
+   $body="";
+   $body .="from:".$name."\r\n";
+   $body .="Email:".$email."\r\n";
+   $body .="Message:".$message."\r\n";
+
+   if(mail($to,$subject,$body))
    {
        header("location: index.php?success");
        
